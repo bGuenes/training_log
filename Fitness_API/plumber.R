@@ -12,8 +12,6 @@ library(ggplot2)
 library(viridis)
 library(tidyr)
 library(plumber)
-library(usethis)
-library(gh)
 
 source("test/apiTest.R")
 
