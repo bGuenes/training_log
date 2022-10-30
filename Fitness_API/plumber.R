@@ -31,4 +31,3 @@ upload <- function(f, days) {
   plot(p)
 }
 
-
