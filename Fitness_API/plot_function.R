@@ -48,3 +48,4 @@ output <- function(input_file, plot_days){
   
   return(p)
 }
+
