@@ -1,7 +1,7 @@
 output <- function(input_file, plot_days){
   
   # read data
-  df <- read.csv(file = input_file, sep = ",", header = FALSE)
+  df <- read.csv(text = input_file, sep = ",", header = FALSE)
   colnames(df) <- c("Date", "Time", "Training", "Distance", "Duration", "Excertion")
   
   # sort training for time

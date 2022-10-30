@@ -13,7 +13,7 @@ library(viridis)
 library(tidyr)
 library(plumber)
 
-source("test/apiTest.R")
+source("plot_function.R")
 
 
 #* @apiTitle Training Log
@@ -22,9 +22,13 @@ source("test/apiTest.R")
 
 #* Plot a histogram
 #* @serializer png
-#* @post /plot
-function(file, plot_days) {
-  output(file, plot_days)
+#* @param f:file A file
+#* @param days:int
+#* @post /upload
+upload <- function(f, days) {
+  contents = f[[1]]
+  p = output(contents, as.integer(days))
+  plot(p)
 }
 
 
