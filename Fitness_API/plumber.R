@@ -17,7 +17,7 @@ source("plot_function.R")
 
 
 #* @apiTitle Training Log
-#* @apiDescription 
+#* @apiDescription
 
 
 #* Plot a histogram
@@ -26,8 +26,7 @@ source("plot_function.R")
 #* @param days:int
 #* @post /upload
 upload <- function(f, days) {
-  contents = f[[1]]
-  p = output(contents, as.integer(days))
+  contents <- f[[1]]
+  p <- output(contents, as.integer(days))
   plot(p)
 }
-
