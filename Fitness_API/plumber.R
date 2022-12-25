@@ -13,7 +13,7 @@ library(viridis)
 library(tidyr)
 library(plumber)
 
-source("Fitness_API/plot_function.R")
+source("plot_function.R")
 
 
 #* @apiTitle Training Log
