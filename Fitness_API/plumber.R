@@ -21,7 +21,7 @@ source("plot_function.R")
 
 
 #* Plot a histogram
-#* @serializer png
+#* @serializer png list(width = 1000, height = 1000, res = 144)
 #* @param f:file A file
 #* @param days:int
 #* @post /upload
