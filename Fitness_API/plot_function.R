@@ -16,7 +16,7 @@ output <- function(input_file_text, plot_days) {
   df$Date <- as.Date(df$Date, "%d.%m.%Y")
 
   # add missing dates
-  dates <- seq.Date(min(df$Date), max(df$Date), by = "day")
+  dates <- seq.Date(min(df$Date), Sys.Date(), by = "day")
   for (i in seq_along(dates)) {
     if (sum(df$Date == dates[i]) == 0) {
       add_day <- data.frame("Date" = dates[i],
@@ -28,6 +28,8 @@ output <- function(input_file_text, plot_days) {
     }
   }
 
+  df <- df[order(df$Date),]
+
   # calculate daily training time
   unique_dates <- unique(df$Date)
   df_date_trainingTime <- data.frame(Date = unique_dates, daily_duration = 0)
@@ -37,7 +39,7 @@ output <- function(input_file_text, plot_days) {
     sum(df[df$Date == unique_dates[i], ]$Duration)
   }
 
-  mask <- df$Date > max(df$Date) - plot_days
+  mask <- df$Date > (max(df$Date) - plot_days)
 
   df_plot <- df[mask, ]
 
