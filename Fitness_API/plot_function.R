@@ -1,9 +1,8 @@
 output <- function(input_file_text, plot_days) {
 
   # read data
-  df <- read.csv(text = input_file_text, sep = ",", header = FALSE)
-  colnames(df) <- c("Date", "Time", "Training", "Distance",
-                    "Duration", "Excertion")
+  df <- read.csv(text = input_file_text, sep = ";", header = FALSE)
+  colnames(df) <- c("Date", "Training", "Distance","Duration", "Excertion")
 
   # sort training for time
   df <- df[order(df$Date), ]
@@ -21,7 +20,6 @@ output <- function(input_file_text, plot_days) {
   for (i in seq_along(dates)) {
     if (sum(df$Date == dates[i]) == 0) {
       add_day <- data.frame("Date" = dates[i],
-                            "Time" = NA,
                             "Training" = NA,
                             "Distance" = NA,
                             "Duration" = 0,
