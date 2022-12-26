@@ -13,6 +13,7 @@ library(viridis)
 library(tidyr)
 library(plumber)
 library(anytime)
+library(viridisLite)
 
 source("plot_function.R")
 
