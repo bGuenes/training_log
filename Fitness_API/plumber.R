@@ -12,6 +12,7 @@ library(ggplot2)
 library(viridis)
 library(tidyr)
 library(plumber)
+library(anytime)
 
 source("plot_function.R")
 
@@ -21,7 +22,7 @@ source("plot_function.R")
 
 
 #* Plot a histogram
-#* @serializer png list(width = 1000, height = 1000, res = 144)
+#* @serializer png list(width = 1920, height = 1080, res = 144)
 #* @param f:file A file
 #* @param days:int
 #* @post /upload
