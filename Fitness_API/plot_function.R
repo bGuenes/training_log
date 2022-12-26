@@ -13,8 +13,11 @@ output <- function(input_file_text, plot_days) {
   }
   
   # format dates to date format
-  df$Date <- anydate(df$Date)
-  df$Date <- as.Date(df$Date, tryFormats = c("%d.%m.%Y", "%Y-%m-%d"))
+  if (sum(is.na(anydate(df$Date))) == 0) {
+    df$Date <- anydate(df$Date)
+  } else {
+  df$Date <- as.Date(df$Date, "%d.%m.%Y")
+  }
 
   # add missing dates
   dates <- seq.Date(min(df$Date), Sys.Date(), by = "day")
