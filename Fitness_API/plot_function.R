@@ -16,7 +16,7 @@ output <- function(input_file_text, plot_days) {
   if (sum(is.na(anydate(df$Date))) == 0) {
     df$Date <- anydate(df$Date)
   } else {
-  df$Date <- as.Date(df$Date, "%d.%m.%Y")
+    df$Date <- as.Date(df$Date, "%d.%m.%Y")
   }
 
   # add missing dates
