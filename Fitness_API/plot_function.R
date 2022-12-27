@@ -51,7 +51,7 @@ output <- function(input_file_text, plot_days) {
   p <- ggplot(df_plot[order(df$Training), ],
         aes(fill = Training, x = Date, y = Duration)) +
         geom_bar(position = "stack", stat = "identity") +
-        scale_fill_manual(values = magma(5, alpha = 1, begin = 0.4,
+        scale_fill_manual(values = magma(sum(!is.na(unique(df_plot$Training))), alpha = 1, begin = 0.4,
                                            end = 0.8, direction = 1)) +
         ggtitle(sprintf("Over the last %i days you trained %i minutes",
                         plot_days, sum(df_plot$Duration)))
